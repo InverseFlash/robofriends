@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
-import "./App.css";
 import Scroll from "../components/Scroll";
 import ErrorBoundary from "../components/ErrorBoundary";
 import { requestRobots, setSearchField } from "../actions";
 import { connect } from "react-redux";
+import "./App.css";
 
 const mapStateToProps = (state) => {
   return {
@@ -25,13 +25,13 @@ const mapDispatchToProps = (dispatch) => {
 
 function App(props) {
   // const [robots, setRobots] = useState([]);
-  const { searchField, onSearchChange, robots, isPending, onRequestRobots } = props;
+  const { searchField, onSearchChange, robots, isPending, onRequestRobots } =
+    props;
 
   useEffect(() => {
-    console.log('useEffect');
     onRequestRobots();
 
-    // fetch("https://jsonplaceholder.typicode.com/users")
+    // fetch('https://jsonplaceholder.typicode.com/users')
     //   .then((response) => response.json())
     //   .then((users) => setRobots(users));
   }, [onRequestRobots]);
