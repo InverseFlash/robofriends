@@ -6,6 +6,7 @@ import ErrorBoundary from "../components/ErrorBoundary";
 import { requestRobots, setSearchField } from "../actions";
 import { connect } from "react-redux";
 import "./App.css";
+import Header from "../components/Header";
 
 const mapStateToProps = (state) => {
   return {
@@ -24,16 +25,11 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 function App(props) {
-  // const [robots, setRobots] = useState([]);
   const { searchField, onSearchChange, robots, isPending, onRequestRobots } =
     props;
 
   useEffect(() => {
     onRequestRobots();
-
-    // fetch('https://jsonplaceholder.typicode.com/users')
-    //   .then((response) => response.json())
-    //   .then((users) => setRobots(users));
   }, [onRequestRobots]);
 
   const filterRobots = robots.filter((robot) => {
@@ -44,7 +40,7 @@ function App(props) {
     <h1>Loading</h1>
   ) : (
     <div className="tc">
-      <h1 className="f2">Robofriends</h1>
+      <Header />
       <SearchBox searchChange={onSearchChange} />
       <Scroll>
         <ErrorBoundary>
