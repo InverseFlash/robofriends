@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import Card from "./Card.js";
 
 const CardList = ({ robots }) => {
-  const [imgRes, setImageRes] = useState("300x300");
+  // const [imgRes, setImageRes] = useState("300x300");
 
   // const shouldUseHighRes = () => {
   //   console.log(window.innerWidth);
@@ -12,11 +12,11 @@ const CardList = ({ robots }) => {
   //   }
   // };
 
-  useEffect(() => {
-    if (window.innerWidth >= 600) {
-      setImageRes("600x600");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.innerWidth >= 600) {
+  //     setImageRes("600x600");
+  //   }
+  // }, []);
 
   return (
     <Fragment>
@@ -27,7 +27,7 @@ const CardList = ({ robots }) => {
             id={robot.id}
             name={robot.name}
             email={robot.email}
-            imgResolution={imgRes}
+            // imgResolution={imgRes}
           />
         );
       })}
